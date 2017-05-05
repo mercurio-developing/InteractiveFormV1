@@ -198,6 +198,12 @@ label[for=error1] {
   color: red;
   opacity: 0.8;
 }
+label[for=error2] {
+  margin: 8px 0px 25px 0px;
+  font-size: 16px;
+  color: red;
+  opacity: 0.8;
+}
 label[for=exp-month] {
   width: 200px
 }
