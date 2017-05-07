@@ -1,3 +1,4 @@
+
 // total price
 var total = 0 ;
 
@@ -21,7 +22,6 @@ var c = 0;
 var d = 0;
 var e = 0;
 var f = 0;
-var g = 0;
 
 // checking repetition in validation
 
@@ -30,7 +30,7 @@ var check2 = 1;
 var check3 = 1;
 var checkShirt = 1;
 var checkPayment = 1;
-var checkCreditCard
+var checkCreditCard;
 var checkCredit1 = 1;
 var checkCredit2 = 1;
 var checkCredit3 = 1;
@@ -39,8 +39,7 @@ var checkCredit3 = 1;
 //the page load and focus is in input name//
 $(window).on('load', function(){
   $( "#name" ).focus();
-  $('#colors-js-puns').hide()//hide the colors
-
+  $('#colors-js-puns').hide();//hide the colors
  });
 //ADD INPUT!!!//
 $('#title').click(function() {
@@ -79,7 +78,7 @@ $('#design').click(function() {
           }
             if ($( "#design option:selected" ).text() === $('#design option:first-child').text()) {
             //show children of js puns
-            $('#colors-js-puns').hide()
+            $('#colors-js-puns').hide();
         }
 });
 
@@ -102,33 +101,33 @@ $('.activities').click(function() {
         }
       }
   if (checkJsframeworks.prop( "checked") === true) {
-    checkExpress.prop( "disabled", true)// I disabled the check express because if you go to js-frameworks can't go to express
+    checkExpress.prop( "disabled", true);// I disabled the check express because if you go to js-frameworks can't go to express
     if (a === 0){//I add one variable and check with this
         a += 1; //add value to variable of repetition for use in the conditional
         total += 100;////add value for this checkbox to total
       }
     } else if (checkJsframeworks.prop( "checked") === false) { //if js-frameworks is unchecked
-      if (a === 1) {/I check the state in variable of repetition
+      if (a === 1) { //I check the state in variable of repetition
         a = 0;//I reset the variable
         total -= 100;//and remove 100 of the total because I unchecked
-        checkExpress.prop( "disabled", false)//restore the express now the user can check this checkbox
+        checkExpress.prop( "disabled", false);//restore the express now the user can check this checkbox
         }
       }// I repeat the same behavior in the next statements
       if (checkLibs.prop( "checked") === true) {
         if (b === 0){
             b += 1;
             total += 100;
-            checkNode.prop( "disabled", true)
+            checkNode.prop( "disabled", true);
           }
         } else if (checkLibs.prop( "checked") === false) {
           if (b === 1) {
             b = 0;
             total -= 100;
-            checkNode.prop( "disabled", false)
+            checkNode.prop( "disabled", false);
             }
           }
       if (checkExpress.prop( "checked") === true) {
-            checkJsframeworks.prop( "disabled", true)
+            checkJsframeworks.prop( "disabled", true);
             if (c === 0){
                 c += 1;
                 total += 100;
@@ -137,11 +136,11 @@ $('.activities').click(function() {
               if (c === 1) {
                 c = 0;
                 total -= 100;
-                checkJsframeworks.prop( "disabled", false)
+                checkJsframeworks.prop( "disabled", false);
                 }
               }
       if (checkNode.prop( "checked") === true) {
-                    checkLibs.prop( "disabled", true)
+                    checkLibs.prop( "disabled", true);
                     if (d === 0){
                         d += 1;
                         total += 100;
@@ -150,7 +149,7 @@ $('.activities').click(function() {
                       if (d === 1) {
                         d = 0;
                         total -= 100;
-                        checkLibs.prop( "disabled", false)
+                        checkLibs.prop( "disabled", false);
                         }
                       }
       if (checkBuildtools.prop( "checked") === true) {
@@ -203,7 +202,7 @@ $('#payment').click(function() {
   else if ($( "#payment option:selected" ).text() === $('#payment option[value="credit card"]').text()) {
     $('#credit-card').show();
     $('#credit-card').next().hide();
-    $('#payment-info div:last-child').hide();;
+    $('#payment-info div:last-child').hide();
   }
 //paypal option
   else if ($( "#payment option:selected" ).text() === $('#payment option[value="paypal"]').text()) {
@@ -274,7 +273,7 @@ var validateShirt = function(){
 
   $('#design option').click(function() { //this changes in real time and removes the error message
     $('label[for="error1"]').remove();
-    $('.shirt legend').css('margin-bottom','20px')
+    $('.shirt legend').css('margin-bottom','20px');
     checkShirt = 1;
   });
 
@@ -284,54 +283,48 @@ var validateShirt = function(){
           if (checkShirt === 1){
               checkShirt = 0;//variable of repetition
               $('.shirt legend').after('<label for="error1">Dont forget to pick a T-SHIRT</label>');// I append the error message
-              $('.shirt legend').css('margin-bottom','0px')//correction of margin
+              $('.shirt legend').css('margin-bottom','0px');//correction of margin
             }
           }
         }
   else if ($("#design option:selected").val() === $("#design option[value='js puns']").val()){//if the option is selected
             $('label[for="error1"]').remove();//I remove the label
               checkShirt = 1;//and reset the variable
-              $('.shirt legend').css('margin-bottom','20px')
+              $('.shirt legend').css('margin-bottom','20px');
 
           }
   else if ($("#design option:selected").val() === $("#design option[value='heart js']").val()){
             $('label[for="error1"]').remove();//I remove the label
-              checkShirt = 1//and reset the variable
-              $('.shirt legend').css('margin-bottom','20px')
+              checkShirt = 1;//and reset the variable
+              $('.shirt legend').css('margin-bottom','20px');
           }
     else if ($("#design option").prop('selected') === false){//if the option is selected
       $('label[for="error1"]').remove();//I remove the label
         checkShirt = 1;//and reset the variable
       }
 
-  }
+  };
 
 
 //Activities Validate
 
 var validateActivities = function(){
  //this statement checks all checkbox if any is checked add the error message
-    if (checkAll.prop( "checked") === false && checkJsframeworks.prop( "checked") === false
-        && checkLibs.prop( "checked") === false && checkExpress.prop( "checked") === false
-        && checkNode.prop( "checked") === false && checkBuildtools.prop( "checked") === false
-        && checkNpm.prop( "checked") === false) {
+    if (checkAll.prop( "checked") === false && checkJsframeworks.prop( "checked") === false && checkLibs.prop( "checked") === false && checkExpress.prop( "checked") === false && checkNode.prop( "checked") === false && checkBuildtools.prop( "checked") === false && checkNpm.prop( "checked") === false) {
           if (check3 === 1){
               check3 = 0;
               $('.activities legend').after('<label for="error">Please select an Activity</label>');
-              $('.activities legend').css('margin-bottom','0px')
+              $('.activities legend').css('margin-bottom','0px');
           }
              //this statement check all checkbox if one is checked remove the error message
-        else if (checkAll.prop( "checked") === true || checkJsframeworks.prop( "checked") === true
-            || checkLibs.prop( "checked") === true || checkExpress.prop( "checked") === true
-            || checkNode.prop( "checked") === true || checkBuildtools.prop( "checked") === true
-            || checkNpm.prop( "checked") === true){
+        else if (checkAll.prop( "checked") === true || checkJsframeworks.prop( "checked") === true || checkLibs.prop( "checked") === true || checkExpress.prop( "checked") === true || checkNode.prop( "checked") === true || checkBuildtools.prop( "checked") === true || checkNpm.prop( "checked") === true){
           $('label[for="error"]').remove();//this removes the error message
           check3 = 1;
         }
       }
       $('.activities :input').click(function() {//this is checking in realtime
         $('label[for="error"]').remove();
-        $('.activities legend').css('margin-bottom','20px')
+        $('.activities legend').css('margin-bottom','20px');
         check3 = 1;
       });
 };
@@ -342,7 +335,7 @@ var validatePayment = function(){
 
   $('#payment').click(function() { //this changes in real time and removes the error message
     $('label[for="error2"]').remove();
-    $('#payment-info legend').css('margin-bottom','20px')
+    $('#payment-info legend').css('margin-bottom','20px');
     checkPayment = 1;
   });
 
@@ -352,7 +345,7 @@ var validatePayment = function(){
           if (checkPayment === 1){
               checkPayment = 0;//variable of repetition
               $('#payment-info legend').after('<label for="error2">Dont forget to pick a Payment');// I append the error message
-              $('#payment-info legend').css('margin-bottom','0px')//correction of margin
+              $('#payment-info legend').css('margin-bottom','0px');//correction of margin
             }
     else if ($("#payment option").prop('selected') === false){//if the option is selected
       $('label[for="error2"]').remove();//I remove the label
@@ -360,7 +353,7 @@ var validatePayment = function(){
       }
     }
   }
-}
+};
 
 
 //CREDIT CARD NUMBER!!!!!
@@ -371,130 +364,157 @@ var styleMessage = function(){
   labelSelected.css("color","red");
   labelSelected.css("opacity","0.8");
   labelSelected.css("font-size","14px");
-}
+};
 var styleBefore = function(){
   labelSelected.contents().eq(1).remove();
   labelSelected.css("color","black");
   labelSelected.css("opacity","1");
   labelSelected.css("font-size","16px");
-}
+};
 
+var validateCredit;
+var validateCardNumber;
+var validateZip;
+var validateCVV;
 
-var validateCredit = function (){
-        var validateCardNumber = function() {
+validateCredit = function (){
+      validateCardNumber = function() {
         labelSelected = $("label[for='cc-num']");
-      if ($.isNumeric($('#cc-num').val()) === true) {
-        if($('#cc-num').val().length === 13 || $('#cc-num').val().length === 16){ //this is the conditional of credit-card number if it is correct remove the advice
-            checkCredit1 = 1;
-            styleBefore();
-          }
-        else { //if correct number isn't in the credit-card input, I append the advice
-          if (checkCredit1 === 1) {
-              checkCredit1 = 0;
-              styleMessage();
-              labelSelected.append("( insert 13 or 16 digits )");
-            }
-          }
-        }
-        else if ($('#cc-num').val().length === 0) { //if no numbers are in the field of credit-card number put the error message
-          if (checkCredit1 === 1) {
-            checkCredit1 = 0;
-            styleMessage();
-            labelSelected.append("( field is blank )");
-            }
-          }
-        else if ($.isNumeric($('#cc-num').val()) === false) {//if the user inserts letters put the error message
+        checkCredit1 = 1;
+        if ($('#cc-num').val() === "") { //if no numbers are in the field of credit-card number put the error message
              if (checkCredit1 === 1) {
-              checkCredit1 = 0;
-              styleMessage();
-              labelSelected.append("( insert numbers )");
-            }
-          }
-        }
-        validateCardNumber();
+               checkCredit1 = 0;
+               styleMessage();
+               labelSelected.append("( field is blank )");
+               }
+             }
+             else if ($.isNumeric($('#cc-num').val()) === false) {
+                   styleMessage();
+                   checkCredit1 = 0;
+                   labelSelected.append("( insert number)");
+                 }
+             else {//if the user inserts letters put the error message
+              if ($.isNumeric($('#cc-num').val()) === true ) {
+                  styleBefore();
+                  checkCredit1 = 1;
+                  if ($('#cc-num').val().length === 13 || $('#cc-num').val().length === 16){ //this is the conditional of credit-card number if it is correct remove the advice
+                         checkCredit1 = 1;
+                         styleBefore();
+                       } else {
+                         if (checkCredit1 === 1) {
+                               checkCredit1 = 0;
+                               styleMessage();
+                               labelSelected.append("( insert 13 or 16 digits )");
+                           }
+                        }
+                     } else {
+                       if (checkCredit1 === 1) {
+                             checkCredit1 = 0;
+                             styleMessage();
+                             labelSelected.append("( insert number)");
+                         }
+                       }
+                     }
+                    };
+
+          validateCardNumber();
 
 
-//I repeat the same behavior in the nexts statements, with different conditionals...
-//ZIP !!
-  var validateZip = function () {
-      labelSelected = $("label[for='zip']");
-    if ($.isNumeric($('#zip').val()) === true) {
-          if($('#zip').val().length === 5){
-            styleBefore();
-            checkCredit2 = 1;
-          }
-          else {
-                checkCredit2 = 0;
-                styleMessage();
-                labelSelected.append("(5 numbers)");
-          }
-        }
-        else if ($('#zip').val() === "") {
-          if (checkCredit2 === 1) {
-            checkCredit2 = 0;
-            styleMessage();
-            labelSelected.append("(insert zip)");
-          }
-        }
-        else if ($.isNumeric($('#zip').val()) === false) {
-            if (checkCredit2 === 1) {
-                checkCredit2 = 0;
-                styleMessage();
-                labelSelected.append("(insert zip )");
-              }
-            }
-          }
-          validateZip();
-
-// CVV !!
-var validateCVV = function (){
-    labelSelected = $("label[for='cvv']");
-    if ($.isNumeric($('#cvv').val()) === true) {
-        if($('#cvv').val().length === 3){
-          styleBefore();
-          checkCredit3 = 1;
-        }
-        else {
-              checkCredit3 = 0;
-              styleMessage();
-              labelSelected.append("(3 numbers)");
-            }
-          }
-          else if ($('#cvv').val() === "") {
-            if (checkCredit3 === 1) {
-              checkCredit3 = 0;
-              styleMessage();
-              labelSelected.append("(insert cvv)");
-            }
-          }
-           else if ($.isNumeric($('#cvv').val()) === false) {
-             if (checkCredit3 === 1) {
-                  checkCredit3 = 0 ;
-                  styleMessage();
-                  labelSelected.append("( insert numbers )");
+  //I repeat the same behavior in the nexts statements, with different conditionals...
+  //ZIP !!
+      validateZip = function () {
+        labelSelected = $("label[for='zip']");
+        checkCredit2 = 1;
+        if ($('#zip').val() === "") {
+             if (checkCredit2 === 1) {
+               checkCredit2 = 0;
+               styleMessage();
+               labelSelected.append("(insert zip)");
+             }
+           }
+           else if ($.isNumeric($('#zip').val()) === false) {
+             if (checkCredit2 === 1) {
+                 checkCredit2 = 0;
+                 styleMessage();
+                 labelSelected.append("(5 numbers )");
+               }
+             }
+             else {
+               if ($.isNumeric($('#zip').val()) === true) {
+                  styleBefore();
+                  checkCredit1 = 1;
+                  if($('#zip').val().length === 5){
+                    styleBefore();
+                    checkCredit2 = 1;
+                  } else {
+                        checkCredit2 = 0;
+                        styleMessage();
+                        labelSelected.append("(5 numbers)");
                 }
-              }
+          } else {
+            if (checkCredit2 === 1) {
+              checkCredit2 = 0;
+              styleMessage();
+              labelSelected.append("(5 numbers )");
             }
-            validateCVV();
-            checkCreditCard = checkCredit1 + checkCredit2 + checkCredit3;
+          }
         }
+      };
+            validateZip();
+
+  // CVV !!
+  validateCVV = function (){
+      labelSelected = $("label[for='cvv']");
+      checkCredit3 = 1;
+      if ($('#cvv').val() === "") {
+               if (checkCredit3 === 1) {
+                 checkCredit3 = 0;
+                 styleMessage();
+                 labelSelected.append("(insert cvv)");
+               }
+             }
+          else if ($.isNumeric($('#cvv').val()) === true) {
+                styleBefore();
+                checkCredit1 = 1;
+                if($('#cvv').val().length === 3){
+                  styleBefore();
+                  checkCredit3 = 1;
+              } else{
+                    if (checkCredit3 === 1) {
+                    checkCredit3 = 0 ;
+                    styleMessage();
+                    labelSelected.append("(insert 3 numbers)");
+                  }
+                }
+              } else {
+                  if (checkCredit3 === 1) {
+                      checkCredit3 = 0 ;
+                      styleMessage();
+                      labelSelected.append("( insert numbers )");
+                    }
+                  }
+                };
+
+              validateCVV();
+              checkCreditCard = checkCredit1 + checkCredit2 + checkCredit3;
+          };
 
 // SUBMIT !!!
 
 var totalValidation;
 var checkValidation; //this is the value for submit
 
-var checkingValidation = function (){
+checkingValidation = function (){
   if ($( "#payment option:selected" ).text() === $('#payment option[value="credit card"]').text()) { //if the user use creditcard this add one validation
       validateCredit();
       totalValidation = check1 + check2 + check3 + checkCreditCard + checkShirt ;
       checkValidation = 7;
 
     }
-    else { totalValidation = check1 + check2 + check3 + checkPayment + checkShirt  //if not I only use the validation of payment with bitcon or paypal.
+    else { totalValidation = check1 + check2 + check3 + checkPayment + checkShirt ; //if not I only use the validation of payment with bitcon or paypal.
           checkValidation = 5;
         }
-      }
+      };
 
 //when click the button of submit I call all function and use all variable of repetion in one equation to determinted if it is possible to submit!!
 
@@ -512,17 +532,17 @@ $('button').click(function(){
   validateRealTime();
 
         if (totalValidation === checkValidation ){ //If the total validation is the same of the checking the all errors resolved I submit
-          console.log('submit')
-          console.log(totalValidation)
-          totalValidation = 0
+          console.log('submit');
+          console.log(totalValidation);
+          totalValidation = 0;
           // $('form').submit(function (event) {
           //   event.preventDefault();
           //
           // });
         }
         else { //but if is not correct I use the preventDefault to make it possible to change the field
-          console.log("wasn't submit")
-          console.log(totalValidation) //is the counter of validition the user need for submit
+          console.log("wasn't submit");
+          console.log(totalValidation); //is the counter of validition the user need for submit
           event.preventDefault();
           totalValidation = 0;
 
@@ -531,7 +551,8 @@ $('button').click(function(){
 
 // Validation REALTIME!!!
 // validation in REALTIME with the on()
-var validateRealTime = function() {
+var validateRealTime
+validateRealTime = function() {
 $('#name').on('input',function() {
   validateName();
 });
@@ -545,7 +566,7 @@ $('.activities').change(function() {
   validateActivities();
 });
 $('#credit-card').on('input',function() {
-  validateCredit();
+    validateCredit();
 });
-}
+};
 validateRealTime();
